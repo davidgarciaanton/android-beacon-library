@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import org.altbeacon.beacon.BeaconIntentProcessor;
-import org.altbeacon.beacon.service.BeaconService;
 import org.altbeacon.beacon.BeaconManager;
 
 @TargetApi(4)
