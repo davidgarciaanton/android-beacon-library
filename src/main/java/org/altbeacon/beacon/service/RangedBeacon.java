@@ -32,6 +32,13 @@ public class RangedBeacon {
         return mTracked;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("RangedBeacon for " + mBeacon + " has " + mMeasurements.size() + " measurements");
+        return sb.toString();
+    }
+
     public void setTracked(boolean tracked) {
         mTracked = tracked;
     }
@@ -106,7 +113,7 @@ public class RangedBeacon {
 		}
 		double runningAverage = sum/(endIndex-startIndex+1);
 
-		BeaconManager.logDebug(TAG, "Running average mRssi based on "+size+" measurements: "+runningAverage);
+		BeaconManager.logDebug(TAG, "Running average mRssi based on "+size+" measurements: "+runningAverage + " for Beacon: " + mBeacon);
 		return runningAverage;
 
 	}

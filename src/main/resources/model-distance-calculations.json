@@ -19,6 +19,24 @@
       "model":"Nexus 5",
       "manufacturer":"LGE",
       "default": true
+    },
+    {
+      "coefficient1": 0.88707,
+      "coefficient2": 6.8284,
+      "coefficient3": -0.12830,
+      "version":"4.4.2",
+      "build_number":"18.1.A.1.21",
+      "model":"D5103",
+      "manufacturer":"ASony"
+    },
+    {
+      "coefficient1": 1.00477135,
+      "coefficient2": 5.80184978,
+      "coefficient3": -0.2131627,
+      "version":"4.4.2",
+      "build_number":"18.1.A.1.21",
+      "model":"D5103",
+      "manufacturer":"Sony"
     }
   ]
 }

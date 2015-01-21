@@ -73,7 +73,11 @@ public class RangeState {
                     rangedBeacon.commitMeasurements(); // calculates accuracy
                     if (!rangedBeacon.noMeasurementsAvailable()) {
                         finalizedBeacons.add(rangedBeacon.getBeacon());
+                    } else {
+                        BeaconManager.logDebug(TAG, "Ranged beacon " + rangedBeacon + " has no more measurements, not returning it??");
                     }
+                } else {
+                    BeaconManager.logDebug(TAG, "Ranged beacon " + rangedBeacon + " is no Tracked");
                 }
                 // If we still have useful measurements, keep it around but mark it as not
                 // tracked anymore so we don't pass it on as visible unless it is seen again

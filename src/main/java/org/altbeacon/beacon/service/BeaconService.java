@@ -340,7 +340,9 @@ public class BeaconService extends Service {
                 Region region = regionIterator.next();
                 RangeState rangeState = rangedRegionState.get(region);
                 BeaconManager.logDebug(TAG, "Calling ranging callback");
-                rangeState.getCallback().call(BeaconService.this, "rangingData", new RangingData(rangeState.finalizeBeacons(), region));
+                final Collection<Beacon> beacons = rangeState.finalizeBeacons();
+                if (!beacons.isEmpty())
+                    rangeState.getCallback().call(BeaconService.this, "rangingData", new RangingData(beacons, region));
             }
         }
     }
