@@ -74,7 +74,11 @@ public class RangedBeacon {
 		return mMeasurements.size() == 0;
 	}
 
-	private class Measurement implements Comparable<Measurement> {
+    public static long getSampleExpirationMilliseconds() {
+        return sampleExpirationMilliseconds;
+    }
+
+    private class Measurement implements Comparable<Measurement> {
 		Integer rssi;
 		long timestamp;
 		@Override

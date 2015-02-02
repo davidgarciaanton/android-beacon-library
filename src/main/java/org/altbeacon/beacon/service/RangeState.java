@@ -23,8 +23,6 @@
  */
 package org.altbeacon.beacon.service;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -71,7 +69,7 @@ public class RangeState {
                 RangedBeacon rangedBeacon = mRangedBeacons.get(beacon);
                 if (rangedBeacon.isTracked()) {
                     rangedBeacon.commitMeasurements(); // calculates accuracy
-                    if (!rangedBeacon.noMeasurementsAvailable()) {
+                    if (!rangedBeacon.noMeasurementsAvailable() || RangedBeacon.getSampleExpirationMilliseconds() <= 0) {
                         finalizedBeacons.add(rangedBeacon.getBeacon());
                     } else {
                         BeaconManager.logDebug(TAG, "Ranged beacon " + rangedBeacon + " has no more measurements, not returning it??");

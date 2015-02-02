@@ -292,7 +292,7 @@ public class Beacon implements Parcelable {
 	public double getDistance() {
 		if (mDistance == null) {
             double bestRssiAvailable = mRssi;
-            if (mRunningAverageRssi != null) {
+            if (mRunningAverageRssi != null && !Double.isNaN(mRunningAverageRssi)) {
                 bestRssiAvailable = mRunningAverageRssi;
             }
             else {
